@@ -1,14 +1,12 @@
 import express from 'express';
 
+import './database/connection';
+
 const app = express();
 
 app.use(express.json());
 
-app.post('/:id', (request, response) => {
-  console.log(request.query);
-  console.log(request.params);
-  console.log(request.body);
-
+app.post('/', (request, response) => {
   return response.json({ message: 'hello world' });
 })
 
